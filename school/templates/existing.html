@@ -1,0 +1,37 @@
+<html>
+{% include "base.html" %}
+<center><h1>{{title}}</h1></center>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<table align="center" border="2" style="width:75%" style="height:300px" >
+    <thead>
+        <tr>
+            <td><b>S.No</b></td>
+            <td><b>NAME</b></td>
+            <td><b>AADHAR NUMBER</b></td>
+            <td><b>CLASS</b></td>
+            <td><b>DIVISION</b></td>
+            <td><b>E-GRAND ID</b></td>
+            <td><b>CATEGORY</b></td>
+            <td><b>GENDER</b></td>
+        </tr>
+    </thead>
+        {% for k in queryset %}
+            <tbody>
+            <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{k.s_name}}</td>
+            <td>{{k.s_aadhar}}</td>
+            <td>{{k.s_class}}</td>
+            <td>{{k.s_division}}</td>
+            <td>{{k.s_egrantid}}</td>
+            <td>{{k.s_category}}</td>
+            <td>{{k.s_gender}}</td>
+            </tr>
+            </tbody>
+        {% endfor %}
+</table>
+</html>
